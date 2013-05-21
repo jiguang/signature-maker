@@ -1,0 +1,35 @@
+/*
+ * @desc: Signature Tool for ECD
+ * @author: laserji
+ * @email: jiguang1984#gmail.com
+ * @date: 2012-09-25
+ */
+body{background-color: #F1F1F1;}
+.wrap{width:835px;margin: 40px auto; padding: 40px 0; border: 1px solid #E2E2E2; border-radius: 20px;background-color: #fff; box-shadow: 0 0 4px #ddd; font-family:'GothamRoundedBook' 'Microsoft Yahei' sans-serif; color:#333;}
+.hd{height: 210px; background: url(../img/bg_header.png) no-repeat 0 0; text-indent: -999em;}
+.form{width:720px;margin: 0 auto;}
+.form .form_row{width:520px;margin: 10px auto; border-bottom: 12px solid #E5E5E5;}
+.form .form_row .type{width:518px; height:40px;line-height: 40px; font-size:16px; margin-bottom: -11px;margin-left:1px; border: 0 none;text-align: center; }
+.form .mod_job{position:relative;}
+.form .mod_job .job_list{display: none; width:518px; padding:0; margin:0; list-style:none; border:1px solid #E5E5E5; background-color: #fff;  position:absolute; top:42px; box-shadow: 0 1px 2px #eee;}
+.form .mod_job .job_list li{line-height: 28px;cursor:pointer;text-align: center; font-family:'Microsoft Yahei'; color:#666;}
+.form .mod_job .job_list li:hover{background-color: #F7F7F7;}
+
+@font-face{font-family:'GothamRoundedBook';src:url("GothamRnd-Book.otf");}
+.default-avatar{ height:90px; padding:20px; text-align: center; }
+.default-avatar .outter{ display:inline-block; vertical-align:middle; width:90px; height:90px; padding:5px; margin-right:4px; border:2px solid #fff; cursor:pointer; border-radius:52px; color:#ddd; font-size:14px; text-align:center; line-height:84px; overflow:hidden; transition: border-color 0.5s; -webkit-transition: border-color 0.5s; }
+.default-avatar .inner{display:inline-block; vertical-align:middle; width:90px; height:90px; border-radius:45px;overflow: hidden;}
+.default-avatar .custom_wrap .inner{background-color: #ddd;color:#fff;margin-right: 0;}
+.default-avatar .custom_wrap img{width:auto; height:auto;}
+.default-avatar .cur, .default-avatar .outter:hover{ border:2px solid #ccc;}
+
+.mod_box{width:256px; height:59px; margin:50px auto;}
+.mod_box a{display: block; width:256px; height:59px; border:1px solid #ef4272; border-radius: 30px; background-color:#ef4272; background-image: linear-gradient(top , #ef4272, #de3060 33px); text-align: center; font: 24px/56px "Microsoft Yahei"; color: #fff; text-decoration: none; transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
+}
+.mod_box a:hover{ background-color:#DE184D; }
+.preview, .canvas{ width:509px; height:100px; }
+.preview{display: none; margin: 0 auto; padding:10px; }
+.tip{display: none; padding:20px 0 30px; text-align: center; font-size: 12px; color: #666}
+.other_version{text-align: right;}
+.other_version a{ color:#666; font-family:'Microsoft Yahei' sans-serif; font-size:12px;text-decoration: none; }

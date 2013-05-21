@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ECD Signature Maker</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="css/style.css?t=20120925">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/app.js?t=20120925"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="hd">ECD Signature Maker</div>
+    <div class="form" id="inputList">
+        <section>
+            <div class="form_row"><input type="text" class="type" placeholder="Name" name="name" id="name" value="" autofocus="true"></div>
+            <div class="form_row mod_job" id="mod_job">
+                <input type="text" class="type" placeholder="Position" name="job" id="job" value="" autocomplete="off">
+                <ul class="job_list" id="job_list">
+                    <li>UR</li>
+                    <li>ID</li>
+                    <li>VD</li>
+                    <li>FD</li>
+                    <li>PM</li>
+                    <li>Other</li>
+                </ul>
+            </div>
+            <div class="form_row"><input type="text" class="type" placeholder="Extension Number" name="sitting" id="sitting" value="" autocomplete="on" maxlength="5"></div>
+            <div class="form_row"><input type="text" class="type" placeholder="Mobile" name="mobile" id="mobile" value="" autocomplete="on" maxlength="11"></div>
+            <div class="form_row"><input type="text" class="type" placeholder="QQ" name="qq" id="qq" value="" autocomplete="on" maxlength="13"></div>
+            <div class="form_row"><input type="text" class="type" placeholder="What's UP" name="character" id="character" value="" autocomplete="on"></div>
+            <div class="default-avatar">
+                <span class="outter cur"><span class="inner"><img src="avatar/1.jpg" alt=""></span></span>
+                <span class="outter"><span class="inner"><img src="avatar/2.jpg" alt=""></span></span>
+                <span class="outter"><span class="inner"><img src="avatar/3.jpg" alt=""></span></span>
+                <span class="outter"><span class="inner"><img src="avatar/4.jpg" alt=""></span></span>
+                <span class="outter"><span class="inner"><img src="avatar/5.jpg" alt=""></span></span>
+                <span class="outter custom_wrap"><span class="inner" id="custom" title="Drop a 90x90 pic here!" ondragenter="return false" ondragover="return false"> Drop/Click</span></span>
+            </div>
+            <div class="mod_form choose_file" style="width:0;height:0;overflow:hidden;">
+                <input type="file" name="" id="file" autocomplete="on">
+            </div>
+            <div class="mod_box" id="btn_wrap">
+                <a id="submit" href="#">Generate</a>
+            </div>
+            <div class="preview" id="preview">
+                <canvas class="canvas" id="canvas" width="509" height="100">
+                    Cannot preview, please UPDATE your browser!
+                </canvas>
+                <img id="signImage" src="" alt="" style="display: none;">
+            </div>
+            <div class="tip" id="tip">
+                请使用鼠标右键点击图片，选择“图片另存为”选项保存图片
+            </div>
+            <div class="other_version">
+                <a href="http://ecd.ecc.com/signature/php/" target="_blank">PHP Version></a>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+</html>
