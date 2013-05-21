@@ -18,7 +18,7 @@ var sign = {
             this.avatar_url = 'avatar/1.jpg';
 
             // init bg offset
-            this.w = 509;
+            this.w = 570;
             this.h = 100;
 
             this.bind();
@@ -43,34 +43,34 @@ var sign = {
         return context.measureText(text).width;
     },
     paint: function (context, type, text){
-        var font_1 = '26px GothamRoundedBook',
-            font_2 = '12px GothamRoundedBook',
-            font_3 = '12px "Microsoft Yahei"',
-            color_1 = '#393939',
-            color_2 = '#ffffff';
+            var font_1 = '26px GothamRoundedBook',
+                font_2 = '12px GothamRoundedBook',
+                font_3 = '12px "Microsoft Yahei"',
+                color_1 = '#393939',
+                color_2 = '#ffffff';
 
-        // if job type is 'others', then hide the pop
-        if(text == 'Other'){
-            this.isOthers = true;
-        }
+            // if job type is 'others', then hide the pop
+            if(text == 'Other'){
+                this.isOthers = true;
+            }
 
-        // parameter determined by design(PSD)
-        switch(type){
-            case 'name': this.nameLeft = this.drawText(context, font_1, color_1, text, 220, 37);
-                break;
-            case 'job':
-                this.drawText(context, font_2, color_2, text, this.nameLeft + 229, 20);
-                break;
-            case 'sitting': this.drawText(context, font_2, color_1, text, 237, 63);
-                break;
-            case 'mobile': this.drawText(context, font_2, color_1, text, 304, 63);
-                break;
-            case 'qq': this.drawText(context, font_2, color_1, text, 416, 63);
-                break;
-            case 'character': this.drawText(context, font_3, color_1, '" '+text+' "', 220, 85);
-                break;
-            default: console.log('Error: No such type!');
-        }
+            // parameter determined by design(PSD)
+            switch(type){
+                case 'name': this.nameLeft = this.drawText(context, font_1, color_1, text, 220, 37);
+                    break;
+                case 'job':
+                    this.drawText(context, font_2, color_2, text, this.nameLeft + 229, 20);
+                    break;
+                case 'sitting': this.drawText(context, font_2, color_1, text, 237, 63);
+                    break;
+                case 'mobile': this.drawText(context, font_2, color_1, text, 304, 63);
+                    break;
+                case 'qq': this.drawText(context, font_2, color_1, text, 416, 63);
+                    break;
+                case 'character': if(text!=='')this.drawText(context, font_3, color_1, '" '+text+' "', 220, 85);
+                    break;
+                default: console.log('Error: No such type!');
+            }
     },
     imageSelected: function(myFiles) {
         var that = this;
@@ -80,7 +80,7 @@ var sign = {
             imageReader.onload = (function(aFile) {
                 return function(e) {
                     $('#custom').html(['<img id="custom_avatar" src="', e.target.result,'" title="', aFile.name, '"/>'].join(''));
-                    $('.custom_wrap').addClass('cur');
+                    $('.custom_wrap').siblings().removeClass('cur').end().addClass('cur');
 
                     $('#custom_avatar').load(function(){
                         that.avatar_url = e.target.result;
@@ -142,6 +142,9 @@ var sign = {
     combine: function(){
         var that = this;
 
+        // clear canvas
+        this.context.clearRect(0, 0, this.w, this.h);
+
         // load avatar
         $(new Image()).attr('src', this.avatar_url).load(function () {
 
@@ -150,14 +153,13 @@ var sign = {
                 that.avatar_height >= that.avatar_width ?
                     that.context.drawImage($(this)[0], 86, 2, 90, that.avatar_height*90/that.avatar_width) :
                     that.context.drawImage($(this)[0], 86, 2, that.avatar_width*90/that.avatar_height, 90);
-
             }else{
                 // use default avatar
                 that.context.drawImage($(this)[0], 86, 2, 90, 90);
             }
 
             // load bg
-            $(new Image()).attr('src','img/sample_sign.png').load(function () {
+            $(new Image()).attr('src','img/sample_sign.png?t=201209260000').load(function () {
                 that.context.drawImage($(this)[0], 0, 0, that.w, that.h);
 
                 // load pop
